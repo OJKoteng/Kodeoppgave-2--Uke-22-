@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handleliste</title>
+</head>
+
+<body>
+    <section>
+        <h1>Handleliste</h1>
+        <input type="text" id="varer" name="varer" required placeholder="Skriv inn vare">
+        <br><br>
+    </section>
+
+    <section>
+        <button onclick="generer()">Legg til vare</button>
+        <br><br>
+        <div id="output"></div>
+    </section>
+
+    <script>
+
+        function generer() {
+
+            let vare = document.getElementById("varer").value;
+
+            // Her er et utrykk for å sjekke om det er tallverdier i input feltet. 
+            let inneholderTall = /\d/;
+
+            if (vare === "") {
+                output = `Vennligst skriv inn noen varer`
+            } else if (inneholderTall.test(vare)) {
+                output = `Varenavn kan ikke inneholde tall`;
+            } else {
+                output += `<br>- ${vare}`;
+            }
+
+            document.getElementById("output").innerHTML = output;
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
