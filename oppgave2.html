@@ -9,16 +9,31 @@
 
 <body>
     <section>
-        <h1>Dine favorittbøker</h1>
+        <h1>Favorittbøker</h1>
+        <input type="text" name="bokliste" id="bokliste" required placeholder="Skriv inn dine favorittbøker">
+        <br><br>
     </section>
 
     <section>
-
+        <button onclick="generer()">Legg til bøker</button>
+        <br><br>
     </section>
 
     <section>
-
+        <h2>Resultat</h2>
+        <input type="text" name="output" id="output">
+        <br><br>
     </section>
+
+    <script>
+        function generer() {
+            let bøker = document.getElementById("bokliste").value.trim();
+            let output = "";
+            let outputInput = document.getElementById("output");
+
+            outputInput.value = bøker;
+        }
+    </script>
 </body>
 
 </html>
