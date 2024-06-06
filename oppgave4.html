@@ -5,28 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS</title>
+    <style>
+        .klasse1 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bold;
+            color: rgb(230, 0, 255);
+            background-color: rgb(202, 226, 43);
+        }
+
+        .klasse2 {
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
+            color: rgb(0, 255, 42);
+            background-color: rgb(226, 43, 58);
+        }
+
+        .klasse3 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            font-style: oblique;
+            color: blue;
+            background-color: rgb(43, 226, 180);
+        }
+
+        .klasse4 {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            color: rgb(208, 255, 0);
+            background-color: blueviolet;
+        }
+
+        .klasse5 {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            color: rgb(158, 0, 0);
+            background-color: rgb(226, 159, 43);
+        }
+    </style>
 </head>
 
 <body>
     <section>
-        <h1>CSS-Extravaganza eleganza!</h1>
+        <h1 id="klasse1">CSS-Extravaganza eleganza!</h1>
     </section>
 
     <section>
-
+        <h2 id="klasse2">Wilkommen - Bienvenue - Welcome!</h2>
     </section>
 
     <section>
-
+        <h3 id="klasse3">Frende - étranger - Stranger!</h3>
     </section>
 
     <section>
-
+        <h4 id="klasse4">Glücklich zu sehen - Je suis enchanté - Happy to see you!</h4>
     </section>
 
     <section>
-
+        <h5 id="klasse5"> Bleibe - Rester - Stay!</h5>
     </section>
+
+    <script>
+
+        let h1Element = document.querySelector('h1');
+        let h2Element = document.querySelector('h2');
+        let h3Element = document.querySelector('h3');
+        let h4Element = document.querySelector('h4');
+        let h5Element = document.querySelector('h5');
+
+        h1Element.classList.add('klasse1')
+        h2Element.classList.add('klasse2')
+        h3Element.classList.add('klasse3')
+        h4Element.classList.add('klasse4')
+        h5Element.classList.add('klasse5')
+    </script>
 </body>
 
 </html>
