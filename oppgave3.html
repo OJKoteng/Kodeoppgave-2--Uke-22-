@@ -5,10 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klikke-teller</title>
+    <style>
+        .color1 {
+            color: red;
+        }
+
+        .color2 {
+            color: blue;
+        }
+
+        .color3 {
+            color: green;
+        }
+
+        .color4 {
+            color: violet;
+        }
+
+        .color5 {
+            color: orange;
+        }
+    </style>
 </head>
 
 <body>
+    <section>
+        <h1>En klikke-teller du kommer til å klikke vinkel av!</h1>
+        <button id="klikkKnapp">Klikk på meg!</button>
+        <br><br>
+        <input type="text" id="klikkTeller" readonly>
+        <br><br>
+    </section>
 
+    <script>
+
+        let count = 0;
+
+        let colorIndex = 0;
+
+        let colors = ['color1', 'color2', 'color3', 'color4', 'color5'];
+
+        // Her setter jeg opp funksjonen med en = count; for å sette opp verdien.
+        function updateklikkTeller() {
+            let textField = document.getElementById("klikkTeller");
+            textField.value = count;
+
+            // Her fjerner jeg først alle fargene
+            colors.forEach(color => textField.classList.remove(color));
+
+            // Her legger jeg til fargene 
+            textField.classList.add(colors[colorIndex]);
+
+            // Her oppdaterer jeg fargen i arrayen
+            colorIndex = (colorIndex + 1) % colors.length;
+        }
+
+
+        // Her setter jeg opp en event listener for å oppdatere funksjonen med antall klikk. En event listener er et attributt som venter på en form for brukeraktivitet som igjen skal oppdatere funksjonalitet på et eller annet vis. 
+        document.getElementById("klikkKnapp").addEventListener('click', function () {
+            count++;
+            updateklikkTeller();
+        });
+
+        // Oppdater tekstfeltet med den nye verdien. 
+        updateklikkTeller();
+
+    </script>
 </body>
 
 </html>
